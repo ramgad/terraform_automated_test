@@ -32,13 +32,13 @@ bundle install
 ```
 
 It will create a Gemfile.lock
-At this point, you have installed all the dependencies required to test your terraform module, now, you are ready to kitchen commmands to apply and test your changes.
+At this point, you have installed all the Components to run terraform code, and Ruby dependencies that are required to test your terraform module.
 
 
 ## GIT Repo
 - Download the latest source from this repo
 
-If you already have the repo downloaded and unsure about having latest, git pull command bill bring the latest code
+If you already have the repo downloaded and unsure about having latest, git pull command will bring the latest code
 ``` 
     commands:
     git clone git@github.com:ramgad/tf_aws_s3_sqs_kitchen_test.git
@@ -68,13 +68,22 @@ aws s3 ls
 
 In case you want setup new AWS profile, more information can be found [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html).
 
-You will need access_key and secret_key of your AWS account
-
-This profile is going to be used for creating the S3 Bucket and SNS Queue
 
 ### Permissions
-The assumption is that your AWS profile with the above keys has access to create the SNS and S3 bucket
+The assumption is that your AWS profile with the above keys have required IAM roles (privileges) to create the SNS and S3 bucket
 
+### Configure terraform.tfvars [parameters]
+    Edit the file - vi or nano terraform.tfvars and populate values to the parameters
+    
+    terraform.tfvars
+    ```
+    aws_region     = "<<Enter AWS Region>>"     //Enter AWS regions where you want to run this code against
+    sns_topic_name = "<<Enter-Unique-SNS-Topic-Name>>"   //Custom SNS Topic Name
+    bucket_name    = "<<Enter-AWS-Global-Unique-S3-Bucket-Name>>" //An Amazon S3 bucket name is globally unique, and the namespace is shared by all AWS accounts
+    tags           = [] // Array of key pairs
+    emails         = ["<<Enter Email Address, ensure to Confirm the Subscription"] //Array of Email Ids
+    ```
+    
 
 ### Execution
 
@@ -82,7 +91,7 @@ Please follow the steps below to run the code
 ```
 1. terraform init
 2. terraform validate
-3. terraform plan -out "plan.out"
+3. terraform plan -var-file="terraform.tfvars" -out "plan.out"
 4. terraform apply "plan.out"
 ```
     
