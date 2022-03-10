@@ -1,4 +1,4 @@
-# Terraform AWS S3 SNS KMS Subscription
+# Terraform AWS S3 SNS Integration with Kitchen Test
 
 This repository contains step by step guide to provision AWS S3 bucket, AWS SNS Queue and have Integration between both of them. The infrastructure is created using terraform code and expected to have some working knowledge on the terraform
 
