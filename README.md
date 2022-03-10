@@ -41,7 +41,7 @@ At this point, you have installed all the dependencies required to test your ter
 If you already have the repo downloaded and unsure about having latest, git pull command bill bring the latest code
 ``` 
     commands:
-    git clone https://github.com/.....
+    git clone git@github.com:ramgad/tf_aws_s3_sqs_kitchen_test.git
 ```
 
 ## Setup AWS Profile
@@ -73,7 +73,7 @@ You will need access_key and secret_key of your AWS account
 This profile is going to be used for creating the S3 Bucket and SNS Queue
 
 ### Permissions
-The assumption is that your profile with the above key has access to create the SNS, S3 bucket. 
+The assumption is that your AWS profile with the above keys has access to create the SNS and S3 bucket
 
 
 ### Execution
