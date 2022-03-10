@@ -84,7 +84,8 @@ Please follow the steps below to run the code
 2. terraform validate
 3. terraform plan -out "plan.out"
 4. terraform apply "plan.out"
-
+```
+    
 ### Manual Steps:
 You will receive subscription confirmation email (assuming the terraform.tfvars has your email address). Upon confirming the subscription, you can go ahead and upload a new file in the s3 bucket. You should see a notification sent out to the email
 
