@@ -101,10 +101,10 @@ You will receive subscription confirmation email (assuming the terraform.tfvars 
 
 ## Kitchen Test steps
 ```
-1. Initializes the Test: bundle exec kitchen create
-2. Creates the resources for testing: bundle exec kitchen converge
-3. Actual Test runs with this command: bundle exec kitchen verify
-4. Cleanup: bundle exec kitchen destroy
+1. Initializes the Test: "bundle exec kitchen create"
+2. Creates the resources for testing: "bundle exec kitchen converge"
+3. Actual Test runs with this command: "bundle exec kitchen verify"
+4. Cleanup: "bundle exec kitchen destroy"
 ```
 
 ## Clean up
